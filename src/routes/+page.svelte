@@ -252,7 +252,7 @@
           </div>
           <div class="flex flex-row gap-1 text-xs">
             <span class="text-sky-500 font-bold">{price}</span>
-            <span class="text-white {getScoreColor(score)}">{score}%</span>
+            <span class={getScoreColor(score)}>{score}%</span>
           </div>
         </div>
       </a>
