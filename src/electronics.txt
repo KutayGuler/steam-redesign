@@ -1,0 +1,107 @@
+i = v / r
+v = i * r
+r = v / i
+
+pd = potential difference
+emf = electro motor force
+
+electrical current unit = amper
+
+resistors that are connected end-to-end (series) have cascading resistance. e.g  r1-r2-r3 ===> r1 + r2 + r3
+                                                                                 v1 v2 v3 ===> E = v1 + v2 + v3 
+
+
+EXAMPLE
+
+r1 - r2 - r3
+|          |
+|          |
+|__+-__+-__|
+    24v 
+
+where r1 = 330 ohm
+      r2 = 1.5k ohm
+      r3 = 470 ohm
+
+total R = 2.3k ohm
+
+calculate:
+a) circuit resistance
+b) circuit current
+c) the pd developed across each resistor
+d) the power dissipated by the complete circuit
+
+solution
+a) 2.3k ohm
+b) 24v / 2.3k ohm = 1.04 mA (mili amper)
+c) v1 = 1.04 mA * 330 ohm = 3.44 V
+   v2 = 1.04 mA * 1.5k ohm = 15.6 V
+   v3 = 1.04 mA * 470 ohm = 4.88 V
+   vSum = 3.44 + 15.6 + 4.88 = 23.928 V
+
+d) P = (I * I) * R = 24V * 1.04mA = 0.2496 W 
+                                  = 249,6 mW
+                                  = 2.496 * 10^(-1) W
+
+EXAMPLE
+
+A --r1-- B --r2-- C
+|                 |
+|--vAB-------vBC--|
+|                 |
+|                 |
+|______+-__+-_____|
+        (12V)
+
+value dissipated = 4W
+
+calculate:
+a) circuit current
+
+4W / 12V = 1/3 A
+
+R = 12V / (1/3 A) = 36 ohm
+
+r1 = R - r2 = 36 ohm - 16 ohm = 20 ohm
+
+
+PARALLEL SERISES
+
+1/R = 1/r1 + 1/r2
+
+R = r1 * r2 / (r1 + r2)
+
+EXAMPLE
+
+-- r1 --
+
+-- r2 --
+
+-- r3 --
+
+ +-  +- (24V)
+
+ where r1 = 330 ohm
+       r2 = 1.5k ohm
+       r3 = 470 ohm
+
+calculate:
+a) total resistance of the circuit
+b) the three branch current
+c) the current drawn from the battery
+
+solution:
+a) 1/330 + 1/1500 + 1/470 = 0.00578 -> 0.003 + 0,00066 + 0,00212 = 0.00578
+  5.78 m ohm
+  5.78 * 10^(-3) ohm
+b) I = V / R
+
+EXAMPLE
+
+A 10 ohm resistor, a 20 ohm resistor, a 30 ohm resistor are connected in series,
+and then in parallel with each other. Calculate the total resistance for each of the two connections.
+
+solution:
+series = 60 ohm
+
+parallel = 1/R = 1/10 + 1/20 + 1/30 = 6/60 + 3/60 + 2/60 = 11/60 = 0.183 ohm 

@@ -1,8 +1,5 @@
 <script lang="ts">
   import Hero from "$lib/components/Hero.svelte";
-
-  // your script goes here
-
   import Searchbox from "$lib/components/Searchbox.svelte";
 </script>
 
