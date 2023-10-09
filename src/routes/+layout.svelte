@@ -1,18 +1,16 @@
 <script lang="ts">
   import '../app.css';
-
-  import { fade, fly, slide } from 'svelte/transition';
-
-  export function openHamburger() {
-    open = true;
+  import { fade, fly } from 'svelte/transition';
+  function openHamburger() {
+    hamburgerOpen = true;
   }
-  let open = false;
+  let hamburgerOpen = false;
   const links = [];
 </script>
 
-<main class="w-full h-full {open ? 'overflow-hidden' : ''}">
+<main class="w-full h-full {hamburgerOpen ? 'overflow-hidden' : ''}">
   <nav
-    class="w-full flex flex-row items-center justify-between p-4 pl-0 bg-gradient-to-b from-black to-transparent fixed z-10"
+    class="z-20 w-full flex flex-row items-center justify-between p-4 pl-0 bg-gradient-to-b from-black via-black to-transparent fixed"
   >
     <img
       class="w-40"
@@ -27,7 +25,7 @@
       />
     </button>
   </nav>
-  {#if open}
+  {#if hamburgerOpen}
     <div class="fixed z-20 w-2/3 h-full bg-slate-950 right-0" transition:fly={{ x: 100 }}>
       {#each links as link}
         <a href="/">{link}</a>
@@ -38,7 +36,7 @@
       transition:fade
       on:click|self={() => {
         console.log('clicked');
-        open = false;
+        hamburgerOpen = false;
       }}
     />
   {/if}
