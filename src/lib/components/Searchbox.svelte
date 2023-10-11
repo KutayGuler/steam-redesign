@@ -1,9 +1,10 @@
 <script lang="ts">
+  export let _for = "";
 </script>
 
 <div class="relative">
   <input
-    placeholder="Search"
+    placeholder={_for ? `Search for ${_for}` : "Search"}
     class="w-full p-2 pl-4 rounded border border-stone-600 bg-stone-800"
     type="text"
   />
