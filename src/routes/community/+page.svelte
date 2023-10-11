@@ -123,8 +123,16 @@
     <div class="flex flex-col gap-2 pt-4">
       {#each reviews as review}
         <div
-          class="w-full h-72 bg-slate-800 border border-slate-600 p-2 text-white rounded"
+          class="relative w-full h-72 bg-slate-800 border border-slate-600 p-2 text-white rounded"
         >
+          <div class="absolute right-2 flex flex-col gap-2 w-full text-xs">
+            {#each icons as icon}
+              <span class="flex flex-row gap-1 justify-center">
+                {@html icon}
+                252
+              </span>
+            {/each}
+          </div>
           <div class="flex flex-row gap-2">
             <div
               class="border border-slate-700 p-2 rounded {review.recommended
@@ -168,14 +176,6 @@
               <h3 class="text-2xl font-bold">
                 {review.recommended ? "Recommended" : "Not Recommended"}
               </h3>
-              <div class="flex flex-row gap-6 w-full text-xs">
-                {#each icons as icon}
-                  <span class="flex flex-row gap-1 justify-center">
-                    {@html icon}
-                    252
-                  </span>
-                {/each}
-              </div>
               <span class="text-xs text-slate-400"
                 >{new Date().toDateString()}</span
               >
