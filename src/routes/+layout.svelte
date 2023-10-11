@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { afterNavigate } from "$app/navigation";
   import "../app.css";
   import { fade, fly } from "svelte/transition";
   function openHamburger() {
@@ -6,10 +7,12 @@
   }
   let open = false;
   const links = [
-    { title: "Store", href: "" },
+    { title: "Store", href: "/" },
     { title: "Community", href: "/community" },
     { title: "Support", href: "/support" },
   ];
+
+  afterNavigate(() => (open = false));
 </script>
 
 <main class="w-full h-full {open ? 'overflow-hidden' : ''}">
