@@ -5,7 +5,7 @@
 <div class="relative">
   <input
     placeholder={_for ? `Search for ${_for}` : "Search"}
-    class="w-full p-2 pl-4 rounded border border-stone-600 bg-stone-800"
+    class="w-full p-2 pl-4 rounded border border-slate-600 bg-slate-800"
     type="text"
   />
   <button class="absolute top-3 right-3">
