@@ -28,7 +28,7 @@
     </button>
   </nav>
   {#if open}
-    <div class="fixed z-20 w-2/3 h-full bg-slate-950 right-0" transition:fly={{ x: 100 }}>
+    <div class="fixed z-20 w-2/3 h-full bg-black right-0" transition:fly={{ x: 100 }}>
       {#each links as link}
         <a href="/">{link}</a>
       {/each}

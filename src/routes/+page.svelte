@@ -205,7 +205,7 @@
   ];
 </script>
 
-<main class="flex flex-col bg-slate-950 w-full h-full">
+<main class="flex flex-col bg-black w-full h-full">
   <Hero />
   <Searchbox />
   <div class="grid grid-rows-2 grid-cols-2 gap-2 items-center justify-center p-2 py-4">
