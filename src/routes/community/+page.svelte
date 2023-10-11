@@ -1,9 +1,20 @@
 <script lang="ts">
   import Searchbox from "$lib/components/Searchbox.svelte";
   const searchTypes = ["friends", "hubs"];
-  const discoverTypes = ["recent", "popular"];
+  const discoverSorts = ["recent", "popular"];
+  const discoverTypes = [
+    "All",
+    "Screenshots",
+    "Artwork",
+    "Broadcasts",
+    "Videos",
+    "Workshop",
+    "News",
+    "Guides",
+    "Reviews",
+  ];
   let searchType = searchTypes[0];
-  let discoverType = discoverTypes[0];
+  let discoverSort = discoverSorts[0];
   let expType: "search" | "discover" = "discover";
 
   const icons = [
@@ -37,30 +48,35 @@
       funny: 250,
       helpful: 250,
       gifts: 250,
+      hours: 25,
     },
     {
       recommended: true,
       funny: 250,
       helpful: 250,
       gifts: 250,
+      hours: 25,
     },
     {
       recommended: false,
       funny: 250,
       helpful: 250,
       gifts: 250,
+      hours: 25,
     },
     {
       recommended: false,
       funny: 250,
       helpful: 250,
       gifts: 250,
+      hours: 25,
     },
     {
       recommended: true,
       funny: 250,
       helpful: 250,
       gifts: 250,
+      hours: 25,
     },
   ];
 </script>
@@ -94,7 +110,7 @@
             class="text-xs rounded border border-slate-800 px-2 py-1 {type ==
             searchType
               ? 'bg-white text-black'
-              : 'bg-black text-white'}">{type}</button
+              : 'bg-black text-white'}">{type.toUpperCase()}</button
           >
         {/each}
       </div>
@@ -102,20 +118,20 @@
   {:else}
     <div>
       <select
-        class="w-full p-2 pl-4 rounded border border-slate-600 bg-slate-800"
+        class="w-full p-2 rounded border border-slate-600 bg-slate-800 text-white"
       >
-        {#each ["", "asd", "asd"] as value}
+        {#each discoverTypes as value}
           <option {value}>{value}</option>
         {/each}
       </select>
       <div class="flex flex-row gap-1 pt-1.5">
-        {#each discoverTypes as type}
+        {#each discoverSorts as type}
           <button
-            on:click={() => (discoverType = type)}
+            on:click={() => (discoverSort = type)}
             class="text-xs rounded border border-slate-800 px-2 py-1 {type ==
-            discoverType
+            discoverSort
               ? 'bg-white text-black'
-              : 'bg-black text-white'}">{type}</button
+              : 'bg-black text-white'}">{type.toUpperCase()}</button
           >
         {/each}
       </div>
@@ -123,17 +139,15 @@
     <div class="flex flex-col gap-2 pt-4">
       {#each reviews as review}
         <div
-          class="relative w-full h-72 bg-slate-800 border border-slate-600 p-2 text-white rounded"
+          class="relative flex flex-col gap-2 w-full h-80 bg-slate-800 border border-slate-600 text-white rounded"
         >
-          <div class="absolute right-4 top-4 flex flex-col gap-2 text-sm">
-            {#each icons as icon}
-              <span class="flex flex-row gap-1.5 items-center justify-center">
-                {@html icon}
-                252
-              </span>
-            {/each}
+          <div
+            class="inline-flex gap-2 w-full h-fit p-2 bg-slate-900 rounded-t shadow"
+          >
+            <img src="https://placehold.co/32x32" alt="" />
+            <a class="text-blue-300 text-xl" href="/">Game Title</a>
           </div>
-          <div class="flex flex-row gap-2">
+          <div class="flex flex-row gap-2 px-2 inner-shadow">
             <div
               class="border border-slate-700 p-2 rounded {review.recommended
                 ? 'bg-green-400'
@@ -172,15 +186,48 @@
                 </svg>
               {/if}
             </div>
-            <div class="flex flex-col items-start gap-1">
-              <h3 class="text-2xl font-bold">
+            <div class="flex flex-col items-start justify-between">
+              <h3 class="text-xl font-bold">
                 {review.recommended ? "Recommended" : "Not Recommended"}
               </h3>
+              <span class="text-slate-400">{review.hours} hours on record</span>
               <span class="text-xs text-slate-400"
                 >{new Date().toDateString()}</span
               >
             </div>
+            <div class="flex-grow" />
+            <div class="flex flex-col justify-between text-sm pr-2 opacity-70">
+              {#each icons as icon}
+                <span class="flex flex-row gap-1.5 items-center justify-center">
+                  {@html icon}
+                  250
+                </span>
+              {/each}
+            </div>
           </div>
+          <p class="p-2 text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+            repellendus modi, assumenda consectetur temporibus quas molestiae
+            labore cumque, illo praesentium cupiditate sit, quis minima quae.
+          </p>
+          <div class="flex-grow" />
+          <!-- TODO: overflowing text -->
+          <button class="self-center font-bold inline-flex gap-2 pb-2"
+            >SEE ALL <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </button>
         </div>
       {/each}
     </div>
