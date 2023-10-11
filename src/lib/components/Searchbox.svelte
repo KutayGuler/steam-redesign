@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="relative mx-2">
+<div class="relative">
   <input
     placeholder="Search"
     class="w-full p-2 pl-4 rounded border border-stone-600 bg-stone-800"

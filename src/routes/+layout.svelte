@@ -1,11 +1,15 @@
 <script lang="ts">
-  import '../app.css';
-  import { fade, fly } from 'svelte/transition';
+  import "../app.css";
+  import { fade, fly } from "svelte/transition";
   function openHamburger() {
     open = true;
   }
   let open = false;
-  const links = [];
+  const links = [
+    { title: "Store", href: "" },
+    { title: "Community", href: "/community" },
+    { title: "Support", href: "/support" },
+  ];
 </script>
 
 <main class="w-full h-full {open ? 'overflow-hidden' : ''}">
@@ -28,20 +32,31 @@
     </button>
   </nav>
   {#if open}
-    <div class="fixed z-20 w-2/3 h-full bg-black right-0" transition:fly={{ x: 100 }}>
+    <div
+      class="flex flex-col gap-2 p-4 fixed z-20 w-2/3 h-full bg-black right-0"
+      transition:fly={{ x: 100 }}
+    >
       {#each links as link}
-        <a href="/">{link}</a>
+        <a class="text-white text-4xl font-bold" href={link.href}
+          >{link.title}</a
+        >
       {/each}
+      <div class="h-full" />
+      <button
+        class="bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white rounded p-2 font-bold"
+        >SIGN IN</button
+      >
     </div>
     <div
       class="fixed z-[11] bg-black opacity-80 w-full h-full"
       transition:fade
       on:click|self={() => {
-        console.log('clicked');
+        console.log("clicked");
         open = false;
       }}
     />
   {/if}
 
+  <div class="pb-16" />
   <slot><!-- optional fallback --></slot>
 </main>
