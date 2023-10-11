@@ -21,11 +21,13 @@
       ? 'z-10'
       : 'z-20'} w-full flex flex-row items-center justify-between p-4 pl-0 bg-gradient-to-b from-black via-black to-transparent fixed"
   >
-    <img
-      class="w-40"
-      src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_logo.png"
-      alt="Steam logo"
-    />
+    <a href="/">
+      <img
+        class="w-40"
+        src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_logo.png"
+        alt="Steam logo"
+      />
+    </a>
     <button on:click={openHamburger}>
       <img
         class="w-8 h-8"
