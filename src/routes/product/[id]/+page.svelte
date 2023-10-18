@@ -56,7 +56,7 @@
     {/each}
   </div>
   <div class="flex flex-col gap-4 text-sm h-24 w-full rounded">
-    <div class="inline-flex gap-2">
+    <div class="inline-flex gap-2 pt-4">
       <a
         href="#reviews"
         class="w-full text-center border {getScoreColor(
@@ -97,8 +97,10 @@
     <div>
       <h3 class="text-slate-400 text-xl pb-1">TAGS</h3>
       <div class="flex flex-wrap gap-1.5">
-        {#each ['xd', 'xd', 'xd', 'xd'] as category}
-          <span class="border border-blue-500 rounded px-2">{category}</span>
+        {#each ['Adventure', 'Action', 'Multiplayer', 'Strategy'] as category}
+          <span class="border border-slate-700 bg-slate-900 rounded px-2"
+            >{category}</span
+          >
           <!-- content here -->
         {/each}
       </div>
@@ -147,5 +149,3 @@
     </div>
   </div>
 </main>
-
-<!-- TODO -->

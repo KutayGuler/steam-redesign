@@ -26,10 +26,28 @@
 
   export let showGameTitle = true;
   export let review: any;
+
+  export let h = 'h-64';
+
+  let seeAll = false;
+
+  // TODO: make the review length variable
+
+  function toggleSeeAll() {
+    seeAll = !seeAll;
+
+    if (seeAll) {
+      h = 'h-full';
+    } else {
+      h = 'h-64';
+    }
+  }
 </script>
 
 <div
-  class="relative flex flex-col gap-2 w-full h-80 bg-slate-800 border border-slate-600 text-white rounded"
+  class="relative duration-100 ease-out flex flex-col gap-2 w-full {h} overflow-hidden bg-slate-800 border border-slate-600 text-white rounded {seeAll
+    ? 'pb-8'
+    : ''}"
 >
   {#if showGameTitle}
     <div
@@ -89,7 +107,6 @@
         <a href="/profile/user_name" class="text-blue-300 text-sm"
           >An extremely long user name for no reason
         </a>
-        <!-- TODO: add user names with variable lengths -->
       </div>
       <span class="text-slate-400 text-xs"
         >{review.hours} hours on record • {new Date().toDateString()}</span
@@ -115,22 +132,58 @@
     modi, assumenda consectetur temporibus quas molestiae labore cumque, illo
     praesentium cupiditate sit, quis minima quae.
   </p>
+  <p class="p-2 text-sm pr-4">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum repellendus
+    modi, assumenda consectetur temporibus quas molestiae labore cumque, illo
+    praesentium cupiditate sit, quis minima quae.
+  </p>
+  <p class="p-2 text-sm pr-4">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum repellendus
+    modi, assumenda consectetur temporibus quas molestiae labore cumque, illo
+    praesentium cupiditate sit, quis minima quae.
+  </p>
+  <p class="p-2 text-sm pr-4">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum repellendus
+    modi, assumenda consectetur temporibus quas molestiae labore cumque, illo
+    praesentium cupiditate sit, quis minima quae.
+  </p>
+
   <div class="flex-grow" />
   <!-- TODO: overflowing text -->
-  <!-- <button class="self-center font-bold inline-flex gap-2 pb-2"
-            >SEE ALL <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </button> -->
+  <div class="absolute bottom-0 w-full flex justify-center pt-2 bg-slate-900">
+    <button class="font-bold inline-flex gap-2" on:click={toggleSeeAll}
+      >{seeAll ? 'SEE LESS' : 'SEE ALL'}
+      {#if seeAll}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 15.75l7.5-7.5 7.5 7.5"
+          />
+        </svg>
+      {:else}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+      {/if}
+    </button>
+  </div>
 </div>
