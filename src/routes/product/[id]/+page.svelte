@@ -45,10 +45,7 @@
 </script>
 
 <main class="text-white p-4 flex flex-col gap-2">
-  <div class="flex flex-row gap-1 items-end justify-between">
-    <h1 class="text-4xl font-bold">{title}</h1>
-    <p class="text-slate-400 text-sm">{new Date().toDateString()}</p>
-  </div>
+  <h1 class="text-4xl font-bold">{title}</h1>
   <img src="https://placehold.co/160x90" alt="game" class="w-full" />
   <div class="flex flex-row gap-2 overflow-x-auto pb-2 h-20">
     {#each { length: 12 } as item}
@@ -92,6 +89,11 @@
     <div>
       <p class="text-xl text-slate-400">PUBLISHER</p>
       <a class="text-blue-500" href="/">Rockstar Games</a>
+    </div>
+
+    <div>
+      <p class="text-xl text-slate-400">RELEASED</p>
+      <p class="text-slate-500">{new Date().toDateString()}</p>
     </div>
 
     <div>
