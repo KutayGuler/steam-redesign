@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import Review from '$lib/components/Review.svelte';
-  import { products } from '$lib/db.js';
+  import { categoryType, products } from '$lib/db.js';
   import { getScoreColor } from '$lib/utils';
   const { title, review } = products[$page.params.id];
 
@@ -100,25 +101,18 @@
       <h3 class="text-slate-400 text-xl pb-1">TAGS</h3>
       <div class="flex flex-wrap gap-1.5">
         {#each ['Adventure', 'Action', 'Multiplayer', 'Strategy'] as category}
-          <span class="border border-slate-700 bg-slate-900 rounded px-2"
-            >{category}</span
+          <button
+            on:click={() => {
+              $categoryType = category;
+              goto('/products');
+            }}
+            class="border border-slate-700 bg-slate-900 rounded px-2"
+            >{category}</button
           >
           <!-- content here -->
         {/each}
       </div>
     </div>
-    <!-- 
-    <div>
-      <h3 class="text-slate-400 text-xl">REVIEWS</h3>
-      <p>
-        Recent <span class={getScoreColor(review.recent, 'text')}
-          >{review.recent}%</span
-        >
-      </p>
-      <p>
-        All <span class={getScoreColor(review.all, 'text')}>{review.all}%</span>
-      </p>
-    </div> -->
 
     <div
       class="inline-flex gap-2 items-center justify-end self-end bg-slate-800 w-full rounded p-2 shadow-inner my-4"

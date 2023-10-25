@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import Hero from '$lib/components/Hero.svelte';
+  import Product from '$lib/components/Product.svelte';
   import Searchbox from '$lib/components/Searchbox.svelte';
-  import { products } from '$lib/db';
+  import { categoryType, products } from '$lib/db';
   import { getScoreColor } from '$lib/utils';
   const categories = ['new', 'trending', 'top', 'upcoming'];
   let category = categories[0];
@@ -13,7 +15,7 @@
 </svg>
 `,
       title: 'NEW',
-      src: 'https://images.unsplash.com/photo-1482855549413-2a6c9b1955a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjR8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
+      src: 'https://images.unsplash.com/photo-1482855549413-2a6c9b1955a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjR8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
     },
     {
       svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -21,7 +23,7 @@
 </svg>
 `,
       title: 'TAGS',
-      src: 'https://images.unsplash.com/photo-1614465000772-1b302f406c47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
+      src: 'https://images.unsplash.com/photo-1614465000772-1b302f406c47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
     },
     {
       svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -29,7 +31,7 @@
 </svg>
 `,
       title: 'SPECIALS',
-      src: 'https://images.unsplash.com/photo-1625805866449-3589fe3f71a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
+      src: 'https://images.unsplash.com/photo-1625805866449-3589fe3f71a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
     },
     {
       svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -37,8 +39,8 @@
 </svg>
 `,
       title: 'FREE',
-      src: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
-    }
+      src: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+    },
   ];
 </script>
 
@@ -46,9 +48,17 @@
   <Hero />
   <section class="px-5">
     <Searchbox />
-    <div class="grid grid-rows-2 grid-cols-2 gap-2 items-center justify-center py-4">
+    <div
+      class="grid grid-rows-2 grid-cols-2 gap-2 items-center justify-center py-4"
+    >
       {#each mainCategories as { svg, title, src }}
-        <button class="w-full flex flex-col items-center justify-center h-36">
+        <button
+          on:click={() => {
+            $categoryType = title;
+            goto('/products');
+          }}
+          class="w-full flex flex-col items-center justify-center h-36"
+        >
           <div class="flex flex-col items-center absolute z-10 text-white">
             {@html svg}
             <span class=" text-white font-bold text-lg">
@@ -75,22 +85,8 @@
       {/each}
     </div>
     <div class="flex flex-col">
-      {#each Object.values(products) as { id, title, categories, price, review }}
-        <a href="/product/{id}" class="flex flex-row items-center gap-2 hover:bg-slate-600 p-2">
-          <img src="https://placehold.co/160x90" alt="" />
-          <div class="flex flex-col gap-1">
-            <h3 class="text-white">{title}</h3>
-            <div class="flex flex-row gap-1 text-gray-300">
-              {#each categories as category}
-                <a class="text-xs" href="/category/{category.toLowerCase()}">{category}</a>
-              {/each}
-            </div>
-            <div class="flex flex-row gap-1 text-xs">
-              <span class="text-sky-500 font-bold">{price}</span>
-              <span class={getScoreColor(review.all, 'text')}>{review.all}%</span>
-            </div>
-          </div>
-        </a>
+      {#each Object.values(products) as product}
+        <Product {product} />
       {/each}
     </div>
   </section>

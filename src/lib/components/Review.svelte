@@ -26,12 +26,9 @@
 
   export let showGameTitle = true;
   export let review: any;
-
   export let h = 'h-64';
 
   let seeAll = false;
-
-  // TODO: make the review length variable
 
   function toggleSeeAll() {
     seeAll = !seeAll;
@@ -54,7 +51,7 @@
       class="inline-flex gap-2 w-full h-fit p-2 bg-slate-900 rounded-t shadow"
     >
       <img src="https://placehold.co/32x32" alt="" />
-      <a class="text-blue-300 text-xl" href="/">Game Title</a>
+      <!-- <a class="text-blue-300 text-xl" href="/">{products}</a> -->
     </div>
   {:else}
     <div class="pb-1" />
@@ -149,7 +146,6 @@
   </p>
 
   <div class="flex-grow" />
-  <!-- TODO: overflowing text -->
   <div class="absolute bottom-0 w-full flex justify-center pt-2 bg-slate-900">
     <button class="font-bold inline-flex gap-2" on:click={toggleSeeAll}
       >{seeAll ? 'SEE LESS' : 'SEE ALL'}
