@@ -118,7 +118,24 @@
       </p>
     </div> -->
 
-    <div class="inline-flex gap-2 items-center self-end">
+    <div
+      class="inline-flex gap-2 items-center justify-end self-end bg-slate-800 w-full rounded p-2 shadow-inner my-4"
+    >
+      <span class="inline-flex gap-1">
+        <img
+          src="https://store.akamai.steamstatic.com/public/images/v6/icon_platform_win.png?v=3"
+          alt=""
+        />
+        <img
+          src="https://store.akamai.steamstatic.com/public/images/v6/icon_platform_mac.png"
+          alt=""
+        />
+        <img
+          src="https://store.akamai.steamstatic.com/public/images/v6/icon_platform_linux.png"
+          alt=""
+        />
+      </span>
+      <span class="flex-grow" />
       <span class="text-lg"> 99.99 zl </span>
       <button
         class="bg-green-500 inline-flex gap-2 p-2 rounded font-bold text-center"
