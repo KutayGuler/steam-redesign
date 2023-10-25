@@ -133,6 +133,7 @@
       </span>
       <span class="flex-grow" />
       <span class="text-lg"> 99.99 zl </span>
+      <!-- TODO: add added to cart display card -->
       <button
         class="bg-green-500 inline-flex gap-2 p-2 rounded font-bold text-center"
         >Add to Cart <svg

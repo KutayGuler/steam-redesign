@@ -23,7 +23,7 @@ interface Products {
 
 function generateProductsAndReviews(): Products {
   let products = {};
-  let reviews = {};
+  let reviews = [];
   let ids = [];
 
   for (let i = 0; i < PRODUCT_AMOUNT; i++) {
@@ -43,11 +43,9 @@ function generateProductsAndReviews(): Products {
       },
     };
 
-    // @ts-expect-error
-    reviews[id] = {
-      id,
-      title: 'Stray Panda',
-    };
+    for (let i = 0; i < 10; i++) {
+      reviews.push({ game_id: id });
+    }
   }
 
   return products;
@@ -55,3 +53,4 @@ function generateProductsAndReviews(): Products {
 
 export const products: Products = generateProductsAndReviews();
 export const categoryType = writable('');
+export const supportType = writable('');

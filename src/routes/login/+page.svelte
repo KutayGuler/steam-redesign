@@ -85,8 +85,10 @@
 
     <div class="flex flex-row items-center gap-2">
       <span>New to steam?</span>
-      <button class="p-1 bg-green-600 rounded text-sm flex-grow"
-        >Create an account</button
+      <a
+        href="/register"
+        class="p-1 bg-green-600 rounded text-sm flex-grow text-center"
+        >Create an account</a
       >
     </div>
   </div>

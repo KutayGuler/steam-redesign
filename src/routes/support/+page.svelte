@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import Searchbox from '$lib/components/Searchbox.svelte';
+  import { supportType } from '$lib/db';
 
   // TODO: change images
 
@@ -44,8 +46,14 @@
   <div
     class="grid grid-rows-2 grid-cols-2 gap-2 items-center justify-center py-4"
   >
-    {#each popularGames as { svg, title, src }}
-      <button class="w-full flex flex-col items-center justify-center h-36">
+    {#each popularGames as { title, src }}
+      <button
+        on:click={() => {
+          $supportType = title;
+          goto('/support/type');
+        }}
+        class="w-full flex flex-col items-center justify-center h-36"
+      >
         <div class="flex flex-col items-center absolute z-10 text-white">
           <span class=" text-white font-bold text-lg">
             {title}
@@ -61,7 +69,13 @@
   </div>
   <div class="flex flex-col gap-2">
     {#each issueTypes as issue}
-      <a href="/" class="p-2 rounded bg-slate-600">{issue}</a>
+      <button
+        on:click={() => {
+          $supportType = issue;
+          goto('/support/type');
+        }}
+        class="p-2 rounded bg-slate-600">{issue}</button
+      >
     {/each}
   </div>
 </main>

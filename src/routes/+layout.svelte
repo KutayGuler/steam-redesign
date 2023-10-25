@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { afterNavigate } from "$app/navigation";
-  import "../app.css";
-  import { fade, fly } from "svelte/transition";
+  import { afterNavigate } from '$app/navigation';
+  import '../app.css';
+  import { fade, fly } from 'svelte/transition';
   function openHamburger() {
     open = true;
   }
   let open = false;
   const links = [
-    { title: "Store", href: "/" },
-    { title: "Community", href: "/community" },
-    { title: "Support", href: "/support" },
+    { title: 'Store', href: '/' },
+    { title: 'Community', href: '/community' },
+    { title: 'Support', href: '/support' },
   ];
 
   afterNavigate(() => (open = false));
@@ -47,16 +47,17 @@
         >
       {/each}
       <div class="h-full" />
-      <button
-        class="bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white rounded p-2 font-bold"
-        >SIGN IN</button
+      <a
+        href="/login"
+        class="bg-gradient-to-r from-blue-500 to-blue-700 w-full text-white rounded p-2 font-bold text-center"
+        >SIGN IN</a
       >
     </div>
     <div
       class="fixed z-[11] bg-black opacity-80 w-full h-full"
       transition:fade
       on:click|self={() => {
-        console.log("clicked");
+        console.log('clicked');
         open = false;
       }}
     />
