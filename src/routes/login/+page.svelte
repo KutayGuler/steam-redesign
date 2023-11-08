@@ -35,11 +35,17 @@
     {:else}
       <div>
         <label for=""> Account name </label>
-        <input class="w-full p-2 rounded border border-slate-600 bg-slate-800" type="text" />
+        <input
+          class="w-full p-2 rounded border border-slate-600 bg-slate-800"
+          type="text"
+        />
       </div>
       <div>
         <label for=""> Password </label>
-        <input class="w-full p-2 rounded border border-slate-600 bg-slate-800" type="text" />
+        <input
+          class="w-full p-2 rounded border border-slate-600 bg-slate-800"
+          type="text"
+        />
       </div>
       <div class="inline-flex gap-1">
         <input class="rounded border" type="checkbox" />
@@ -76,9 +82,9 @@
       >
     {/if}
     <a href="/support" class="underline pt-8">I can't sign in</a>
-    <div class="flex flex-row items-center gap-2">
+    <div class="flex flex-row justify-between gap-2">
       <span>New to steam?</span>
-      <a href="/register" class="p-1 bg-green-600 rounded text-sm flex-grow text-center"
+      <a href="/register" class="rounded text-blue-500 text-sm"
         >Create an account</a
       >
     </div>
