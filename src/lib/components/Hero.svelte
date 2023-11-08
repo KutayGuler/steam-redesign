@@ -13,16 +13,20 @@
         </h3>
         <div class="inline-flex justify-between w-full">
           <span>{defaultProduct.price}</span>
-          <div class="inline-flex gap-2">
-            <span class={getScoreColor(defaultProduct.review.all, 'text')}
-              >{defaultProduct.review.all}%</span
-            >
+          <div
+            class="inline-flex gap-2 {getScoreColor(
+              defaultProduct.review.all,
+              'text'
+            )}"
+          >
+            <span>{defaultProduct.review.all}%</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              class="w-5 h-5 stroke-white"
+              stroke="currentColor"
+              class="w-5 h-5"
             >
               <path
                 stroke-linecap="round"

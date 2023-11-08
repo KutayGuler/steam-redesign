@@ -50,17 +50,21 @@
 >
   {#if showGameTitle}
     <div
-      class="inline-flex gap-2 w-full h-fit p-2 bg-slate-900 rounded-t shadow"
+      class="inline-flex gap-2 w-full h-fit p-2 bg-transparent rounded-t shadow"
     >
-      <img src="https://placehold.co/32x32" alt="" />
-      <a class="text-blue-300 text-xl" href="/product/{defaultProduct.id}"
+      <a class="text-blue-300 text-xl z-10" href="/product/{defaultProduct.id}"
         >{defaultProduct.title}</a
       >
+      <img
+        class="absolute top-0 left-0 brightness-[.20] h-10 w-full object-cover"
+        src="/bannerlord.jpg"
+        alt=""
+      />
     </div>
   {:else}
     <div class="pb-1" />
   {/if}
-  <div class="flex flex-row gap-2 px-2">
+  <div class="flex flex-row gap-2 px-2 z-10">
     <div class="flex flex-col">
       <div class="flex flex-row gap-2 items-center">
         <div class="">

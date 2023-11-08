@@ -18,16 +18,20 @@
     </div>
     <div class="flex flex-row justify-between text-xs h-full">
       <span class="text-sky-500 font-bold">{product.price}</span>
-      <div class="inline-flex items-center gap-2">
-        <span class={getScoreColor(product.review.all, 'text')}
-          >{product.review.all}%</span
-        >
+      <div
+        class="inline-flex items-center gap-2 {getScoreColor(
+          product.review.all,
+          'text'
+        )}"
+      >
+        <span>{product.review.all}%</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
-          class="w-5 h-5 pb-0.5 stroke-white"
+          stroke="currentColor"
+          class="w-5 h-5 pb-0.5"
         >
           <path
             stroke-linecap="round"
