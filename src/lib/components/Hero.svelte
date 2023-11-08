@@ -14,7 +14,7 @@
         alt=""
       />
     </div>
-  {/each}
+  {/each}w
 </Carousel>
 <div class="pb-8" />
 

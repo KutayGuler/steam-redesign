@@ -45,6 +45,7 @@
 </script>
 
 <main class="flex flex-col bg-black w-full h-full">
+  <h1 class="text-white text-4xl font-bold pl-4 py-4">Highlights</h1>
   <Hero />
   <section class="px-5">
     <Searchbox />
