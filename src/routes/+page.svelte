@@ -48,7 +48,7 @@
   <Hero />
   <section class="px-5">
     <Searchbox />
-    <div
+    <!-- <div
       class="grid grid-rows-2 grid-cols-2 gap-2 items-center justify-center py-4"
     >
       {#each mainCategories as { svg, title, src }}
@@ -72,8 +72,8 @@
           />
         </button>
       {/each}
-    </div>
-    <div class="flex flex-row gap-2 pb-2">
+    </div> -->
+    <div class="flex flex-row gap-2 pb-2 pt-4">
       {#each categories as c}
         <button
           on:click={() => (category = c)}

@@ -91,7 +91,7 @@
             </svg>
           {/if}
         </div>
-        <span class="text-2xl font-bold">
+        <span class="text-xl font-bold">
           {review.recommended ? 'Recommended' : 'Not Recommended'}
         </span>
       </div>
@@ -102,10 +102,10 @@
                   class="w-10 h-10"
                 /> -->
         <a href="/profile/user_name" class="text-blue-300 text-sm"
-          >An extremely long user name for no reason
+          >An extremely long user name
         </a>
       </div>
-      <span class="text-slate-400 text-xs"
+      <span class="text-slate-400 text-xs pt-1"
         >{review.hours} hours on record • {new Date().toDateString()}</span
       >
       <!-- <span class="text-xs text-slate-400"
@@ -147,25 +147,32 @@
 
   <div class="flex-grow" />
   <div class="absolute bottom-0 w-full flex justify-center pt-2 bg-slate-900">
-    <button class="font-bold inline-flex gap-2" on:click={toggleSeeAll}
+    <button
+      class="font-bold inline-flex gap-2 items-center pb-1"
+      on:click={toggleSeeAll}
       >{seeAll ? 'SEE LESS' : 'SEE ALL'}
-      {#if seeAll}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        class="w-6 h-6 stroke-blue-500"
+      >
+        {#if seeAll}
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M4.5 15.75l7.5-7.5 7.5 7.5"
           />
-        </svg>
-      {:else}
-        <svg
+        {:else}
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          />
+        {/if}
+      </svg>
+      <!-- <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -173,13 +180,7 @@
           stroke="currentColor"
           class="w-6 h-6"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
-      {/if}
+        </svg> -->
     </button>
   </div>
 </div>
