@@ -9,7 +9,36 @@ that the current website.
 - Inconsistent components, you can come across to a new button every few pages
 - Verbose and repetitive way of conveying information
 
-## Fixes
+## Solutions
+
+### Typography
+
+- Used only one font, Motiva Sans, which is Steam's official font.
+- For text sizes, I used Tailwind's typography system which is as follows:
+
+<!-- TODO: put image here -->
+
+### Colors
+
+- Used tailwind's color palette & black and white.
+  - Backgrounds:
+    - Primary colors:
+      - Slate (600, 700, 800, 900)
+    - Secondary colors:
+      - Blue (500, 700)
+      - Sky (500)
+    - Accent colors:
+      - Red (400)
+      - Yellow (500)
+      - Green (500, 600)
+  - Texts:
+    - Slate (400)
+    - Gray (300)
+    - Blue (500)
+    - Sky (500)
+    - Red (400)
+    - Yellow (500)
+    - Green (500, 600)
 
 ### Navbar
 
