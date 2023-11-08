@@ -38,9 +38,9 @@ function generateProductsAndReviews(): Products {
       categories: ['Adventure', 'Casual'],
       price: '$29.99',
       review: {
-        recent: 23,
-        all: 85
-      }
+        recent: Math.round(Math.random() * 100),
+        all: Math.round(Math.random() * 100),
+      },
     };
 
     // TODO: complete this for review card's game to be linkable
@@ -60,8 +60,8 @@ export const defaultProduct = {
   price: '$29.99',
   review: {
     recent: 23,
-    all: 85
-  }
+    all: 85,
+  },
 };
 
 export const products: Products = generateProductsAndReviews();

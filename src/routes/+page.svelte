@@ -5,7 +5,7 @@
   import Searchbox from '$lib/components/Searchbox.svelte';
   import { categoryType, products } from '$lib/db';
   import { getScoreColor } from '$lib/utils';
-  const categories = ['new', 'trending', 'top', 'upcoming'];
+  const categories = ['New', 'Trending', 'Top', 'Upcoming'];
   let category = categories[0];
 
   const mainCategories = [
@@ -84,6 +84,7 @@
         >
       {/each}
     </div>
+    <h3 class="text-white pl-2 pt-4 font-bold text-2xl">{category} Games</h3>
     <div class="flex flex-col">
       {#each Object.values(products) as product}
         <Product {product} />
