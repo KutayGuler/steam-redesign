@@ -132,7 +132,7 @@
         />
       </span>
       <span class="flex-grow" />
-      <span class="text-lg pt-1"> 99.99 zl </span>
+      <span class="text-lg"> 99.99 zl </span>
       <button
         class="bg-green-500 inline-flex gap-2 p-2 px-4 rounded font-bold text-center items-center"
         >Add to Cart <svg
