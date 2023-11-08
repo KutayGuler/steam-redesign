@@ -164,7 +164,7 @@
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
-        class="w-6 h-6 stroke-blue-500"
+        class="w-6 h-6 pb-1 stroke-blue-500"
       >
         {#if seeAll}
           <path
