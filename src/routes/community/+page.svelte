@@ -137,7 +137,7 @@
         {/each}
       </div>
     </div>
-    <div class="flex flex-col gap-4 pt-4">
+    <div class="flex flex-col gap-4 pt-8">
       {#each reviews as review}
         <Review {review} />
       {/each}
