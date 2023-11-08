@@ -19,7 +19,7 @@
     <div class="flex flex-row justify-between text-xs h-full">
       <span class="text-sky-500 font-bold">{product.price}</span>
       <div
-        class="inline-flex items-center gap-2 {getScoreColor(
+        class="inline-flex items-center gap-1 {getScoreColor(
           product.review.all,
           'text'
         )}"
