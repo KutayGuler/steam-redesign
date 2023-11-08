@@ -1,38 +1,28 @@
-# create-svelte
+# Report
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This project aims to redesign various pages of Steam to make the UX and UI more consistent
+that the current website.
 
-## Creating a project
+## Problems of Current Website
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Too many different shades of blue
+- Inconsistent components, you can come across to a new button every few pages
+- Verbose and repetitive way of conveying information
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Fixes
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Navbar
 
-## Developing
+- Made the background transparent for a less obtrusive look
+- Centered hamburger vertically, put it on the right side for easier access, since
+  most people are right handed
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Hamburger
 
-```bash
-npm run dev
+- Reduced the number of links, put the most important links instead
+- Removed footers from the bottom of the hamburger
+- Added a more prominent sign in button
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Hero
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- Removed categories, put the highlighted products instead moved search bar below the highlighted products
