@@ -4,28 +4,26 @@
   const comments = [
     {
       user: 'user',
-      comment: 'comment',
+      comment: 'comment'
     },
     {
       user: 'user',
-      comment: 'comment',
+      comment: 'comment'
     },
     {
       user: 'user',
-      comment: 'comment',
+      comment: 'comment'
     },
     {
       user: 'user',
-      comment: 'comment',
+      comment: 'comment'
     },
     {
       user: 'user',
-      comment: 'comment',
-    },
+      comment: 'comment'
+    }
   ];
 </script>
-
-{$page.params.id}
 
 <main class="flex flex-col p-4 text-white">
   <div class="flex flex-row gap-2">

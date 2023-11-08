@@ -2,9 +2,9 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import Review from '$lib/components/Review.svelte';
-  import { categoryType, products } from '$lib/db.js';
+  import { categoryType, products, defaultProduct } from '$lib/db.js';
   import { getScoreColor } from '$lib/utils';
-  const { title, review } = products[$page.params.id];
+  const { title, review } = products[$page.params.id] || defaultProduct;
 
   const reviews = [
     {
@@ -12,36 +12,36 @@
       funny: 250,
       helpful: 250,
       gifts: 250,
-      hours: 25,
+      hours: 25
     },
     {
       recommended: true,
       funny: 250,
       helpful: 250,
       gifts: 250,
-      hours: 25,
+      hours: 25
     },
     {
       recommended: false,
       funny: 250,
       helpful: 250,
       gifts: 250,
-      hours: 25,
+      hours: 25
     },
     {
       recommended: false,
       funny: 250,
       helpful: 250,
       gifts: 250,
-      hours: 25,
+      hours: 25
     },
     {
       recommended: true,
       funny: 250,
       helpful: 250,
       gifts: 250,
-      hours: 25,
-    },
+      hours: 25
+    }
   ];
 </script>
 
@@ -76,10 +76,9 @@
     </div>
 
     <p>
-      Grand Theft Auto V for PC offers players the option to explore the
-      award-winning world of Los Santos and Blaine County in resolutions of up
-      to 4k and beyond, as well as the chance to experience the game running at
-      60 frames per second.
+      Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los
+      Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to
+      experience the game running at 60 frames per second.
     </p>
 
     <div>
@@ -106,8 +105,7 @@
               $categoryType = category;
               goto('/products');
             }}
-            class="border border-slate-700 bg-slate-900 rounded px-2"
-            >{category}</button
+            class="border border-slate-700 bg-slate-900 rounded px-2">{category}</button
           >
           <!-- content here -->
         {/each}
@@ -134,8 +132,7 @@
       <span class="flex-grow" />
       <span class="text-lg"> 99.99 zl </span>
       <!-- TODO: add added to cart display card -->
-      <button
-        class="bg-green-500 inline-flex gap-2 p-2 rounded font-bold text-center"
+      <button class="bg-green-500 inline-flex gap-2 p-2 rounded font-bold text-center"
         >Add to Cart <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

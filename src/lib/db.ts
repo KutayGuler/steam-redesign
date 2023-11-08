@@ -39,8 +39,8 @@ function generateProductsAndReviews(): Products {
       price: '$29.99',
       review: {
         recent: 23,
-        all: 85,
-      },
+        all: 85
+      }
     };
 
     // TODO: complete this for review card's game to be linkable
@@ -52,6 +52,17 @@ function generateProductsAndReviews(): Products {
 
   return products;
 }
+
+export const defaultProduct = {
+  id: 'stray_panda',
+  title: 'Stray Panda',
+  categories: ['Adventure', 'Casual'],
+  price: '$29.99',
+  review: {
+    recent: 23,
+    all: 85
+  }
+};
 
 export const products: Products = generateProductsAndReviews();
 export const categoryType = writable('');

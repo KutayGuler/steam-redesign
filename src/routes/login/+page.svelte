@@ -4,7 +4,7 @@
 
 <main class="flex flex-col items-center w-full text-white">
   <h1 class="text-2xl font-bold text-center pb-16">Sign in</h1>
-  <div class="w-1/2 flex flex-col gap-2">
+  <div class="w-3/4 max-w-lg flex flex-col gap-2">
     {#if qr}
       <span class="text-center">Scan QR code to sign in</span>
 
@@ -35,17 +35,11 @@
     {:else}
       <div>
         <label for=""> Account name </label>
-        <input
-          class="w-full p-2 rounded border border-slate-600 bg-slate-800"
-          type="text"
-        />
+        <input class="w-full p-2 rounded border border-slate-600 bg-slate-800" type="text" />
       </div>
       <div>
         <label for=""> Password </label>
-        <input
-          class="w-full p-2 rounded border border-slate-600 bg-slate-800"
-          type="text"
-        />
+        <input class="w-full p-2 rounded border border-slate-600 bg-slate-800" type="text" />
       </div>
       <div class="inline-flex gap-1">
         <input class="rounded border" type="checkbox" />
@@ -82,12 +76,9 @@
       >
     {/if}
     <a href="/support" class="underline pt-8">I can't sign in</a>
-
     <div class="flex flex-row items-center gap-2">
       <span>New to steam?</span>
-      <a
-        href="/register"
-        class="p-1 bg-green-600 rounded text-sm flex-grow text-center"
+      <a href="/register" class="p-1 bg-green-600 rounded text-sm flex-grow text-center"
         >Create an account</a
       >
     </div>
