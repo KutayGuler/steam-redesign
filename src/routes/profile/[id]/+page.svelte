@@ -1,27 +1,26 @@
 <script lang="ts">
-  // TODO: complete this page
   import { page } from '$app/stores';
   const comments = [
     {
       user: 'user',
-      comment: 'comment'
+      comment: 'comment',
     },
     {
       user: 'user',
-      comment: 'comment'
+      comment: 'comment',
     },
     {
       user: 'user',
-      comment: 'comment'
+      comment: 'comment',
     },
     {
       user: 'user',
-      comment: 'comment'
+      comment: 'comment',
     },
     {
       user: 'user',
-      comment: 'comment'
-    }
+      comment: 'comment',
+    },
   ];
 </script>
 

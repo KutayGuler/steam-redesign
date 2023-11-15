@@ -109,7 +109,6 @@
             class="border border-slate-700 bg-slate-900 rounded px-2 py-1"
             >{category}</button
           >
-          <!-- content here -->
         {/each}
       </div>
     </div>

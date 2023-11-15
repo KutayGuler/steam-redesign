@@ -19,7 +19,7 @@
     <div class="flex flex-row justify-between text-xs h-full">
       <span class="text-sky-500 font-bold">{product.price}</span>
       <div
-        class="inline-flex items-center gap-1 {getScoreColor(
+        class="inline-flex items-end gap-1 {getScoreColor(
           product.review.all,
           'text'
         )}"
@@ -31,7 +31,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-5 h-5 pb-0.5"
+          class="w-5 h-5"
         >
           <path
             stroke-linecap="round"

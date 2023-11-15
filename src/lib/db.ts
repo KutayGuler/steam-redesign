@@ -43,8 +43,6 @@ function generateProductsAndReviews(): Products {
       },
     };
 
-    // TODO: complete this for review card's game to be linkable
-
     for (let i = 0; i < 10; i++) {
       reviews.push({ game_id: id });
     }

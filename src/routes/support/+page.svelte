@@ -3,8 +3,6 @@
   import Searchbox from '$lib/components/Searchbox.svelte';
   import { supportType } from '$lib/db';
 
-  // TODO: change images
-
   const popularGames = [
     {
       title: 'Counter Strike 2',
